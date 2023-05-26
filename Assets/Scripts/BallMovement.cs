@@ -31,4 +31,11 @@ public class BallMovement : MonoBehaviour
     {
         if (hitCounter * extraSpeed < maxExtraSpeed) hitCounter++;
     }
+
+    public void RestartBall()
+    {
+        rb.velocity = Vector2.zero;
+        transform.position = Vector2.zero;
+        StartCoroutine(Launch());
+    }
 }

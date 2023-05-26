@@ -5,6 +5,7 @@ using UnityEngine;
 public class BallBounce : MonoBehaviour
 {
     BallMovement ballMovement;
+    [SerializeField] ScoreManager scoreManager;
 
     private void Awake()
     {
@@ -29,7 +30,20 @@ public class BallBounce : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Contains("Player")) Bounce(collision);
+        CollisionDetect(collision);
+    }
+
+    void CollisionDetect(Collision2D _collision)
+    {
+        if (_collision.gameObject.name.Contains("Player"))
+        {
+            Bounce(_collision);
+            return;
+        }
+        if (_collision.gameObject.name.Contains("Border")) return;
+
+        //If ball hits the left or right border
+        scoreManager.PlayerScore(_collision.gameObject.name.Contains("Left") ? 1 : 0);
     }
 
 }
