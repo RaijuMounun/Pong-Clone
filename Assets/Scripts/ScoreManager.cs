@@ -31,11 +31,9 @@ public class ScoreManager : MonoBehaviour
         ballMovement.RestartBall();
         foreach (var item in scoreList)
         {
-            if (item == 10)
-            {
-                gameManager.GameOver((scoreList.IndexOf(item) + 1));
-                break;
-            }
+            if (item != 10) continue;
+            gameManager.GameOver((scoreList.IndexOf(item) + 1));
+            break;
         }
     }
 }
