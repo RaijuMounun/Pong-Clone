@@ -9,10 +9,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     string verticalAxisName;
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    private void Awake() => rb = GetComponent<Rigidbody2D>();
 
     private void Start()
     {
