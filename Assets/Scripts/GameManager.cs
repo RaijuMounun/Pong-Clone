@@ -18,9 +18,7 @@ public class GameManager : MonoBehaviour
     {
         CanvasList[0].SetActive(false);
         CanvasList[1].SetActive(true);
-
-
-
+        
         gameOverText.text = $"Player {playerNum} Wins!";
     }
 }
