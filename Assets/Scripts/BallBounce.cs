@@ -7,10 +7,7 @@ public class BallBounce : MonoBehaviour
     BallMovement ballMovement;
     [SerializeField] ScoreManager scoreManager;
 
-    private void Awake()
-    {
-        ballMovement = GetComponent<BallMovement>();
-    }
+    private void Awake() => ballMovement = GetComponent<BallMovement>();
 
     private void Bounce(Collision2D collision)
     {
